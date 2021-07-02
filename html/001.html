@@ -11,14 +11,29 @@
 
 <body>
     <div id="app">
-        <h1>hello {{name}}</h1>
+        <h1>Hello,{{school.name.toUpperCase()}}</h1>
+        <h1>学校坐落在：{{school.address}}</h1>
+        <h1>我学的是：{{school.subject()}}学科</h1>
+        <hr/>
+        <h1>{{school.name,school.address}}</h1>
+        <!-- 最终展示的是name -->
+        <h1>{{(school.name,school.address)}}</h1>
+        <!-- 最终展示的是address -->
+        <h1>{{school.name && school.address}}</h1>
+        <!-- 最终展示的是address-->
+        <h1>{{school.name ? 1 : 2}}</h1>
+        <!-- 最终展示的是1-->
     </div>
 </body>
 <script>
     new Vue({
         el: "#app",
         data: {
-            name: "tdk"
+            school: {
+                name: 'tdk',
+                address: 'jinyu 251',
+                subject: () => '前端'
+            }
         }
     })
 </script>
