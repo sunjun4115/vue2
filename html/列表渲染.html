@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>persons list</h1>
+        <ul>
+            <li v-for="(item,index) in persons">
+                name:{{item.name}} ---- age:{{item.age}} ------ index:{{index}}
+            </li>
+        </ul>
+        <h1>car list</h1>
+        <ul>
+            <li v-for="(val ,key) in car">
+                val:{{val}}-----key:{{key}}
+            </li>
+        </ul>
+        <h1>str list</h1>
+        <ul>
+            <li v-for="(data,index) in str">
+                {{data}}----{{index}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            persons: [{
+                id: '001',
+                name: '老刘',
+                age: 20,
+                sex: '男'
+            }, {
+                id: '002',
+                name: '老李',
+                age: 19,
+                sex: '女'
+            }, {
+                id: '003',
+                name: '老王',
+                age: 18,
+                sex: '男'
+            }, {
+                id: '004',
+                name: '老张',
+                age: 17,
+                sex: '女'
+            }, ],
+            car: {
+                name: '奔驰c63',
+                price: '60万',
+                color: '灰色'
+            },
+            str: 'abcde',
+        }
+    })
+</script>
+
+</html>
